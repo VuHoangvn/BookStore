@@ -1,0 +1,17 @@
+{{>header}}
+
+<div class="main-detail">
+  <div class="book-img">
+    <img src="http://localhost:3000/{{product.imagePath}}" alt="">
+  </div>
+  <div class="book-detail">
+    <h1>{{product.title}}</h1>
+    <h4>{{product.author}}</h4>
+    <p class="price">{{product.price}}$</p>
+    <p>{{product.description}}</p>
+    <a href="/add-to-cart/{{product._id}}" class="pull-right"><i class="fas fa-cart-plus fa-3x"></i></a>
+  </div>
+</div>
+
+
+{{> footer}}

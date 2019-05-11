@@ -1,0 +1,67 @@
+{{>header}}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+        <link rel='stylesheet' href='/stylesheets/style.css'/>
+<div class="container"> 
+ <div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Cart</div>
+
+  <!-- Table -->
+  <table class="table">
+        <thead>
+            <tr>
+                <th>Order</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Summary</th>
+            </tr>
+        </thead>
+        {{# if orders }}
+        <tbody>
+            
+            {{# each orders}}
+            <tr>
+                <td> {{this.date}} </td>
+                <td></td> 
+                <td></td>
+                <td></td> 
+            </tr>
+           
+            {{# each this.items}}
+            <tr>
+                <td>{{this.item.title}}</td>
+                <td>{{this.item.price}}$</td>
+                <td>
+                    {{this.qty}}
+                </td>
+                <td>{{this.price}}$</td>
+                
+            </tr>
+            {{/each}}
+            <td>    </td>
+            <td>
+                <strong>Status: {{ this.status }}</strong>
+            </td>
+            <td>       
+                <strong>Total Price: {{ this.cart.totalPrice }}$</strong>
+            </td>
+            <td>    </td>
+            {{/each}}
+            
+
+    </tbody>
+    {{ else }}
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+                <h2>No Items in Cart</h2>
+            </div>
+        </div>
+    {{/if}}
+
+  </table>
+</div>  
+</div>
+</div>  
+</div>
